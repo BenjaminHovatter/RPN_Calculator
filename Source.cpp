@@ -221,7 +221,6 @@ int main() {
 //This iterates through the input string starting at a passed position (i) , and parses all numbers and any existing decimal point into a string (up until non-digits or non-decimal point). 
 double constructNumber(string equation, int &i) {
 	string stringNumber;
-//	double number;
 
 	//While we iterate through numbers in this function, increase i from iteraion in main() as well.
 	while ((isdigit(equation.at(i)) || equation.at(i) == '.')) {
