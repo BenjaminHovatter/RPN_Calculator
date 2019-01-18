@@ -17,7 +17,7 @@ int main() {
 	//answer from most recent calculation is stored here. Default value is zero.
 	string prevAnswer = "0";
 
-	cout << "Valid operations are + - * / () ^" << endl;
+	cout << "Valid operations are + - * / () ^ %" << endl;
 	while (true) {
 		vector<string> outputQueue;
 		vector<string> operatorStack;
@@ -35,6 +35,7 @@ int main() {
 			{'+', 1},
 			{'/', 2},
 			{'*', 2},
+			{'%', 2},
 			{'^', 3},
 		};
 
@@ -256,6 +257,9 @@ double calculate(string number1, string number2, char operatr) {
 		break;
 	case '^':
 		calculation = pow(stod(number1), stod(number2));
+		break;
+	case '%':
+		calculation = fmod(stod(number1), stod(number2));
 		break;
 	default:
 		cout << "Could not calculate " + number1 + " " << operatr << " " + number2 + ", invalid operator."<< endl;
